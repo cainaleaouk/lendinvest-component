@@ -6,4 +6,12 @@ export const InputField = styled.input`
     color: ${Colors.GREY_DARK};
     text-align: right;
     padding: 8px;
+    ::-webkit-inner-spin-button{
+        -webkit-appearance: none; 
+        margin: 0; 
+    }
+    ::-webkit-outer-spin-button{
+        -webkit-appearance: none; 
+        margin: 0; 
+    }    
 `;
