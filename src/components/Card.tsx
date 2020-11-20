@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Colors } from '../themes';
 import { getTruncatedTitle } from '../utils';
 import { Box } from './Box';
-import { Button } from './Buttons';
+import { Button } from './Button';
 import { Header2, Text } from './Text';
 
 const Container = styled(Box)`
