@@ -107,3 +107,6 @@ export const getAmountAvailable = createSelector(
     getAmountAvailableStr,
     _getAmountAvailable
 );
+
+export const getLoanDetails = (loan: NormalizedLoan): string => 
+    `Tranche: ${loan.tranche} | Amount: ${getNumberFormattedToCurrency(loan.amount)} | Annual return: ${loan.annualised_return}% | Loan ends in: ${getFormattedDuration(loan.term_remaining)}`;
