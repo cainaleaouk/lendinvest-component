@@ -1,8 +1,11 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import styled from 'styled-components';
 
 import { Box } from './components/Box';
 import { Challenge } from './features/Challenge';
+
+import { store } from './store';
 
 const ComponentWrapper = styled(Box)`
     width: 512px;
@@ -12,7 +15,9 @@ const ComponentWrapper = styled(Box)`
 export const App = () => {
     return (
         <ComponentWrapper>
-            <Challenge />
+            <Provider store={store}>
+                <Challenge />
+            </Provider>
         </ComponentWrapper>
     );
 }
