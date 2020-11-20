@@ -4,14 +4,18 @@ import { RootState } from "../../../store";
 import { getNormalizedNumber } from "../../App/store/selectors";
 import { InvestmentRecord, NormalizedLoan } from "../../App/types";
 
+const currencyFormatter = new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' });
 
-const getInvestmentRecords = (state: RootState): InvestmentRecord => {
+export const getNumberFormattedToCurrency = (number: number): string => 
+    currencyFormatter.format(number);
+
+export const getInvestmentRecords = (state: RootState): InvestmentRecord => {
     return state.Challenge.investmentRecords;
 }
 
-export const _getTotalStr = (investmentRecord: InvestmentRecord): string => {
+const _getTotalStr = (investmentRecord: InvestmentRecord): string => {
     const result = Object.keys(investmentRecord).reduce((total, key) => total += investmentRecord[key], 0);
-    return currencyFormatter.format(result).replace('.00', '');
+    return getNumberFormattedToCurrency(result).replace('.00', '');
 }
 
 export const getTotalStr = createSelector(
@@ -55,12 +59,7 @@ const getInvestedAmount = createSelector(
     getInvestmentRecords,
     getSelectedLoanId,
     _getInvestedAmount
-)
-
-const currencyFormatter = new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' });
-
-export const getNumberFormattedToCurrency = (number: number): string => 
-    currencyFormatter.format(number);
+);
 
 const _getAmountAvailableStr = (initialAmount: number, investedAmount: number): string => {
     return getNumberFormattedToCurrency(initialAmount - investedAmount);
@@ -72,19 +71,25 @@ export const getAmountAvailableStr = createSelector(
     _getAmountAvailableStr
 );
 
+const getDateFnsDurationFromSeconds = (seconds: number): Duration => {
+    const timeRemainingInSeconds = Number(seconds);
+    const normalizedStartTime = new Date(0);
+    const normalizedEndTime = addSeconds(normalizedStartTime, timeRemainingInSeconds);
+    return intervalToDuration({
+        start: normalizedStartTime,
+        end: normalizedEndTime,
+    });
+}
+
+const getFormattedDuration = (seconds: number): string => {
+    return formatDuration(getDateFnsDurationFromSeconds(seconds), { format: [ 'months', 'days' ] });
+}
+
 const _getWhenLoanEnds = (loan?: NormalizedLoan): string => {
     if (!loan) {
         return 'never';
     }
-
-    const timeRemainingInSeconds = Number(loan.term_remaining);
-    const normalizedStartTime = new Date(0);
-    const normalizedEndTime = addSeconds(normalizedStartTime, timeRemainingInSeconds);
-    const dateFnsDuration = intervalToDuration({
-        start: normalizedStartTime,
-        end: normalizedEndTime,
-    });
-    return formatDuration(dateFnsDuration, { format: [ 'months', 'days' ] });
+    return getFormattedDuration(loan.term_remaining);
 }
 
 export const getWhenLoanEnds = createSelector(
