@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { AppDispatch, RootState } from '../store';
+import { AppDispatch, RootState } from '../../../store';
 
-import { Box } from './Box';
-import { Button } from './Buttons';
-import { ChallengeStore } from '../features/Challenge/store/challengeStore';
-import { getAmountAvailable } from '../features/Challenge/store/selectors';
-import { InputField } from './InputField';
+import { Box } from '../../../components/Box';
+import { Button } from '../../../components/Buttons';
+import { ChallengeStore } from '../store/challengeStore';
+import { getAmountAvailable } from '../store/selectors';
+import { InputField } from '../../../components/InputField';
 
 const Container = styled(Box)`
     flex-direction: row;

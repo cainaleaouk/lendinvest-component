@@ -12,7 +12,7 @@ import { Colors } from '../../../themes';
 import { getAmountAvailableStr, getIsInvestmentModalOpen, getSelectedLoanTitle, getWhenLoanEnds } from '../store/selectors';
 import { ChallengeStore } from '../store/challengeStore';
 import { AppDispatch, RootState } from '../../../store';
-import InvestmentInputRow from '../../../components/InvestmentInputRow';
+import InvestmentInputRow from './InvestmentInputRow';
 
 Modal.setAppElement('#root');
 
