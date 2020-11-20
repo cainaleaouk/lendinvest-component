@@ -7,11 +7,12 @@ import { Box } from '../../../components/Box';
 import { Card } from '../../../components/Card';
 import { Text } from '../../../components/Text';
 import { getIsLoading, getLoans } from '../../App/store/selectors';
-import { Loan, NormalizedLoan } from '../../App/types';
+import { InvestmentRecord, Loan, NormalizedLoan } from '../../App/types';
 import { AppDispatch, RootState } from '../../../store';
 import { ChallengeStore } from '../store/challengeStore';
 
 import { attemptFetchLoans } from '../../App/store/appStore';
+import { getInvestmentRecords, getLoanDetails } from '../store/selectors';
 
 const Container = styled(Box)`
     flex-direction: column;
@@ -20,6 +21,7 @@ const Container = styled(Box)`
 
 interface StateProps {
     loans: NormalizedLoan[];
+    investedRecords: InvestmentRecord;
     isLoading: boolean;
 }
 
@@ -30,7 +32,7 @@ interface DispatchProps {
 
 type Props = StateProps & DispatchProps;
 
-const Body = ({fetchLoans, investInLoanId, isLoading, loans}: Props) => {
+const Body = ({fetchLoans, investInLoanId, investedRecords, isLoading, loans}: Props) => {
 
     // For the sake of the execise fetch loans when the component mounts
     React.useEffect(() => {
@@ -46,11 +48,12 @@ const Body = ({fetchLoans, investInLoanId, isLoading, loans}: Props) => {
                 key={loan.id}
                 id={loan.id}
                 title={loan.title}
-                details={'my loan  details'}
+                details={getLoanDetails(loan)}
                 onClick={investInLoanId}
+                showInvested={Boolean(investedRecords[loan.id])}
             />
         ));
-    }, [loans, isLoading]);
+    }, [loans, isLoading, investedRecords]);
 
     return <Container>{cardsOrLoading}</Container>;
 }
@@ -62,6 +65,7 @@ const dispatchProps = (dispatch: AppDispatch): DispatchProps => ({
 
 const mapStateToProps = (state: RootState): StateProps => ({
     loans: getLoans(state),
+    investedRecords: getInvestmentRecords(state),
     isLoading: getIsLoading(state),
 });
 
