@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Colors } from '../themes';
+import { getTruncatedTitle } from '../utils';
 import { Box } from './Box';
 import { Button } from './Buttons';
 import { Header2, Text } from './Text';
@@ -11,12 +12,24 @@ const Container = styled(Box)`
     background-color: ${Colors.WHITE};
     border: 1px solid ${Colors.GREY};
     max-height: 72px;
+    margin-bottom: 16px;
 `;
 
 const DetailsContainer = styled(Box)`
-    flex: 1;
     flex-direction: column;
+    flex: 1.8;
 `;
+
+const HeaderContainer = styled(Box)`
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 
+`;
+//@TODO: white-space: nowrap; (This is messing with the styling) find a way to fix if time
+
+const DetailsTextContainer = styled(Box)`
+    flex: 1.5;
+`
 
 const ButtonAndStatusContainer = styled(Box)`
     flex-direction: column;
@@ -52,10 +65,12 @@ export const Card = ({details, id, onClick, title,}: Props) => {
     return (
         <Container>
             <DetailsContainer>
-                <Header2>{title}</Header2>
-                <Text>
-                    {details}
-                </Text>
+                <HeaderContainer>
+                    <Header2>{getTruncatedTitle(title)}</Header2>
+                </HeaderContainer>
+                <DetailsTextContainer>
+                    <Text>{details}</Text>
+                </DetailsTextContainer>
             </DetailsContainer>
             <ButtonAndStatusContainer>
                 <InvestedContainer><InvestedText>Invested</InvestedText></InvestedContainer>
