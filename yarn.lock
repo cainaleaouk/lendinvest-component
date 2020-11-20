@@ -1117,7 +1117,7 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.1", "@babel/runtime@^7.12.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
   version "7.12.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.12.5.tgz#410e7e487441e1b360c29be715d870d9b985882e"
   integrity sha512-plcc+hbExy3McchJCEQG3knOsuh3HH+Prx1P6cLIkET/0dLuQDEnrT+s27Axgc9bqfsmNUNHfscgMUdBpC9xfg==
@@ -1805,7 +1805,7 @@
   dependencies:
     "@types/node" "*"
 
-"@types/hoist-non-react-statics@*":
+"@types/hoist-non-react-statics@*", "@types/hoist-non-react-statics@^3.3.0":
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"
   integrity sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==
@@ -1912,12 +1912,29 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-modal@^3.10.6":
+  version "3.10.6"
+  resolved "https://registry.yarnpkg.com/@types/react-modal/-/react-modal-3.10.6.tgz#76717220f32bc72769190692147814a540053c7e"
+  integrity sha512-XpshhwVYir1TRZ2HS5EfmNotJjB8UEC2IkT3omNtiQzROOXSzVLz5xsjwEpACP8U+PctkpfZepX+WT5oDf0a9g==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-native@*":
   version "0.63.35"
   resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.63.35.tgz#c9d6c3c0461b1aa0dff89c6b53ef509461a19183"
   integrity sha512-2uyPZoHtoUVsVO55HdrRCpgwwG2zVHLttTaR9f/BThoBAQngNWuZQ0eMGmfgRHBKXmi3TmtWjbWPxohkITLlkw==
   dependencies:
     "@types/react" "*"
+
+"@types/react-redux@^7.1.11":
+  version "7.1.11"
+  resolved "https://registry.yarnpkg.com/@types/react-redux/-/react-redux-7.1.11.tgz#a18e8ab3651e8e8cc94798934927937c66021217"
+  integrity sha512-OjaFlmqy0CRbYKBoaWF84dub3impqnLJUrz4u8PRjDzaa4n1A2cVmjMV81shwXyAD5x767efhA8STFGJz/r1Zg==
+  dependencies:
+    "@types/hoist-non-react-statics" "^3.3.0"
+    "@types/react" "*"
+    hoist-non-react-statics "^3.3.0"
+    redux "^4.0.0"
 
 "@types/react@*", "@types/react@^16.9.53":
   version "16.9.56"
@@ -1926,6 +1943,13 @@
   dependencies:
     "@types/prop-types" "*"
     csstype "^3.0.2"
+
+"@types/reselect@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@types/reselect/-/reselect-2.2.0.tgz#c667206cfdc38190e1d379babe08865b2288575f"
+  integrity sha1-xmcgbP3DgZDh03m6vgiGWyKIV18=
+  dependencies:
+    reselect "*"
 
 "@types/resolve@0.0.8":
   version "0.0.8"
@@ -4120,6 +4144,11 @@ data-urls@^2.0.0:
     whatwg-mimetype "^2.3.0"
     whatwg-url "^8.0.0"
 
+date-fns@^2.16.1:
+  version "2.16.1"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.16.1.tgz#05775792c3f3331da812af253e1a935851d3834b"
+  integrity sha512-sAJVKx/FqrLYHAQeN7VpJrPhagZc9R4ImZIWYRFZaaohR3KzmuK88touwsSwSVT8Qcbd4zoDsnGfX4GFB4imyQ==
+
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.9:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
@@ -5030,6 +5059,11 @@ execa@^4.0.0:
     signal-exit "^3.0.2"
     strip-final-newline "^2.0.0"
 
+exenv@^1.2.0:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/exenv/-/exenv-1.2.2.tgz#2ae78e85d9894158670b03d47bec1f03bd91bb9d"
+  integrity sha1-KueOhdmJQVhnCwPUe+wfA72Ru50=
+
 exit@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/exit/-/exit-0.1.2.tgz#0632638f8d877cc82107d30a0fff1a17cba1cd0c"
@@ -5792,7 +5826,7 @@ hmac-drbg@^1.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
-hoist-non-react-statics@^3.0.0, hoist-non-react-statics@^3.3.0:
+hoist-non-react-statics@^3.0.0, hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
   integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
@@ -7385,7 +7419,7 @@ loglevel@^1.6.8:
   resolved "https://registry.yarnpkg.com/loglevel/-/loglevel-1.7.0.tgz#728166855a740d59d38db01cf46f042caa041bb0"
   integrity sha512-i2sY04nal5jDcagM3FMfG++T69GEEM8CYuOfeOIvmXzOIcwE9a/CJPR0MFM97pYMj/u10lzz7/zd7+qwhrBTqQ==
 
-loose-envify@^1.1.0, loose-envify@^1.4.0:
+loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
   integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
@@ -9383,7 +9417,7 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.3"
 
-prop-types@^15.7.2:
+prop-types@^15.5.10, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -9603,7 +9637,7 @@ react-error-overlay@^6.0.8:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.8.tgz#474ed11d04fc6bda3af643447d85e9127ed6b5de"
   integrity sha512-HvPuUQnLp5H7TouGq3kzBeioJmXms1wHy9EGjz2OURWBp4qZO6AfGEcnxts1D/CbwPLRAgTMPCEgYhA3sEM4vw==
 
-react-is@^16.7.0:
+react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
@@ -9617,6 +9651,32 @@ react-is@^17.0.1:
   version "17.0.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz#5b3531bd76a645a4c9fb6e693ed36419e3301339"
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
+
+react-lifecycles-compat@^3.0.0:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
+  integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
+
+react-modal@^3.11.2:
+  version "3.11.2"
+  resolved "https://registry.yarnpkg.com/react-modal/-/react-modal-3.11.2.tgz#bad911976d4add31aa30dba8a41d11e21c4ac8a4"
+  integrity sha512-o8gvvCOFaG1T7W6JUvsYjRjMVToLZgLIsi5kdhFIQCtHxDkA47LznX62j+l6YQkpXDbvQegsDyxe/+JJsFQN7w==
+  dependencies:
+    exenv "^1.2.0"
+    prop-types "^15.5.10"
+    react-lifecycles-compat "^3.0.0"
+    warning "^4.0.3"
+
+react-redux@^7.2.2:
+  version "7.2.2"
+  resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-7.2.2.tgz#03862e803a30b6b9ef8582dadcc810947f74b736"
+  integrity sha512-8+CQ1EvIVFkYL/vu6Olo7JFLWop1qRUeb46sGtIMDCSpgwPQq8fPLpirIB0iTqFe9XYEFPHssdX8/UwN6pAkEA==
+  dependencies:
+    "@babel/runtime" "^7.12.1"
+    hoist-non-react-statics "^3.3.2"
+    loose-envify "^1.4.0"
+    prop-types "^15.7.2"
+    react-is "^16.13.1"
 
 react-refresh@^0.8.3:
   version "0.8.3"
@@ -10008,7 +10068,7 @@ requires-port@^1.0.0:
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
   integrity sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
 
-reselect@^4.0.0:
+reselect@*, reselect@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/reselect/-/reselect-4.0.0.tgz#f2529830e5d3d0e021408b246a206ef4ea4437f7"
   integrity sha512-qUgANli03jjAyGlnbYVAV5vvnOmJnODyABz51RdBN7M4WaVu8mecZWgyQNkG8Yqe3KRGRt0l4K4B3XVEULC4CA==
@@ -11751,6 +11811,13 @@ walker@^1.0.7, walker@~1.0.5:
   integrity sha1-L3+bj9ENZ3JisYqITijRlhjgKPs=
   dependencies:
     makeerror "1.0.x"
+
+warning@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/warning/-/warning-4.0.3.tgz#16e9e077eb8a86d6af7d64aa1e05fd85b4678ca3"
+  integrity sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==
+  dependencies:
+    loose-envify "^1.0.0"
 
 watchpack-chokidar2@^2.0.1:
   version "2.0.1"
