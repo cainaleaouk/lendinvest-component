@@ -48,19 +48,23 @@ const InvestedText = styled(Text)`
     color: ${Colors.GREEN};
 `;
 
-
 interface Props {
-    id: string;
-    title: string;
     details: string;
+    id: string;
     onClick: (id: string) => void;
+    showInvested: boolean;
+    title: string;
 }
 
-export const Card = ({details, id, onClick, title,}: Props) => {
+export const Card = ({details, id, onClick, showInvested, title}: Props) => {
 
     const onButtonPress = React.useCallback(() => {
         onClick(id);
     }, [id, onClick]);
+
+    const invested = React.useMemo(() => {
+        return showInvested ? <InvestedText>Invested</InvestedText> : undefined;
+    }, [showInvested]);
 
     return (
         <Container>
@@ -73,7 +77,7 @@ export const Card = ({details, id, onClick, title,}: Props) => {
                 </DetailsTextContainer>
             </DetailsContainer>
             <ButtonAndStatusContainer>
-                <InvestedContainer><InvestedText>Invested</InvestedText></InvestedContainer>
+                <InvestedContainer>{invested}</InvestedContainer>
                 <Button onClick={onButtonPress}>invest</Button>
             </ButtonAndStatusContainer>
         </Container>
