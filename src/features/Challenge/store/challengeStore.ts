@@ -1,7 +1,7 @@
 import { CaseReducer, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { InvestmentRecord } from '../../App/types';
 
-interface ChallengeState {
+export interface ChallengeState {
     selectedLoanId?: string;
     showInvestmentModal: boolean;
     investmentRecords: InvestmentRecord;
