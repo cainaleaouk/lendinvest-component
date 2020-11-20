@@ -7,6 +7,7 @@ export const getIsLoading = (state: RootState): boolean =>
 export const getLoans = (state: RootState): NormalizedLoan[] =>
     state.App.loans;
 
+//@TODO: move this function to utils
 //@TODO: We are assuming the number won't come with cents in it (check with BE team what's the actual expectation)
 // Simple implementation based on fixture we have
 export const getNormalizedNumber = (numberStr: string) => {
