@@ -3,7 +3,7 @@ import { appApi } from '../api/appApi';
 import { Loan, LoanResponse, NormalizedLoan } from '../types';
 import { getNormalizedLoans } from './selectors';
 
-interface AppState {
+export interface AppState {
     isLoading: boolean;
     loans: NormalizedLoan[];
 };
