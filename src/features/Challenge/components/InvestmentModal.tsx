@@ -14,7 +14,10 @@ import { ChallengeStore } from '../store/challengeStore';
 import { AppDispatch, RootState } from '../../../store';
 import InvestmentInputRow from './InvestmentInputRow';
 
-Modal.setAppElement('#root');
+// Keep jest from freaking out
+if (process.env.NODE_ENV !== 'test') {
+    Modal.setAppElement('#root');
+}
 
 const Container = styled(Box)`
     padding: 16px;

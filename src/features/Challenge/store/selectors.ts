@@ -51,7 +51,6 @@ const getSelectedLoanId = (state: RootState): string | undefined =>
         state.Challenge.selectedLoanId;
 
 const _getInvestedAmount = (investmentRecord: InvestmentRecord, loanId?: string): number => {
-    console.log(loanId, investmentRecord[loanId || ''])
     return investmentRecord[loanId ?? ''] || 0;
 }
 
@@ -97,10 +96,8 @@ export const getWhenLoanEnds = createSelector(
     _getWhenLoanEnds
 );
 
-//@TODO: This is just silly - we need to store the values in challengeStore already normalised so there's no converting from and back to string all the time
 const _getAmountAvailable = (amountStr: string): number => {
-    const normalizedAmount = getNormalizedNumber(amountStr);
-    return normalizedAmount;
+    return getNormalizedNumber(amountStr);
 }
 
 export const getAmountAvailable = createSelector(
