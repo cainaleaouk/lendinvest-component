@@ -1,62 +1,49 @@
 import React from 'react';
 import styled from 'styled-components';
+import Modal from 'react-modal';
+
+import Body from './components/Body';
+import Footer from './components/Footer';
 
 import { Box } from '../../components/Box';
-import { Card } from '../../components/Card';
 import { Header1 } from '../../components/Text/Headers';
+
 import { Colors } from '../../themes';
-
-
-import { Footer } from './components/Footer';
+import InvestmentModal from './components/InvestmentModal';
 
 const Container = styled(Box)`
     background-color: ${Colors.GREY_LIGHT};
     flex-direction: column;
     padding: 24px;
+    position: relative;
 `;
 
 const HeaderContainer = styled(Box)``;
 
-const CardListContainer = styled(Box)`
+const BodyContainer = styled(Box)`
     flex: 5;
-    background-color: red;
-    flex-direction: column;
-    overflwow-y: scroll;
 `;
 
-const TotalContainer = styled(Box)`
+const FooterContainer = styled(Box)`
     flex: 0.75;
 `;
 
-interface StateProps {
-
-}
-
-interface DispatchProps {
-
-}
-
-type Props = StateProps & DispatchProps;
-
-export const Challenge = (props: Props) => {
+export const Challenge = () => {
     return (
         <Container>
+            <InvestmentModal />
+
             <HeaderContainer>
                 <Header1>Current Loans</Header1>
             </HeaderContainer>
 
-            <CardListContainer>
-                <Card
-                    id={'0'}
-                    title={'Loan 1'}
-                    details={'my loan  details'}
-                    onClick={(id: string) => {console.log('click', id)}}
-                />
-            </CardListContainer>
+            <BodyContainer>
+                <Body />
+            </BodyContainer>
 
-            <TotalContainer>
-                <Footer total={'£100.000'}/>
-            </TotalContainer>
+            <FooterContainer>
+                <Footer />
+            </FooterContainer>
         </Container>
     )
 }
