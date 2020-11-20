@@ -59,7 +59,7 @@ const InvestmentInputRow = ({maxAmount, onInvest}: Props) => {
     return (
         <Container>
             <InputContainer>
-                <InputField value={amount} onChange={onInputChange} />
+                <InputField type='number' value={amount} onChange={onInputChange} />
             </InputContainer>
             <ButtonContainer>
                 <Button onClick={onInvestClick}>invest</Button>
