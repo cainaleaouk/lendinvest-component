@@ -1,6 +1,6 @@
 import { CaseReducer, createAsyncThunk, createSlice, PayloadAction, } from '@reduxjs/toolkit';
 import { appApi } from '../api/appApi';
-import { Loan, LoanResponse, NormalizedLoan } from '../types';
+import { NormalizedLoan } from '../types';
 import { getNormalizedLoans } from './selectors';
 
 export interface AppState {

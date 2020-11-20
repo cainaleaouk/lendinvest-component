@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { Colors } from '../themes';
 
-import { Box } from './Box';
 import { Text } from './Text';
 
 const Container = styled.button`

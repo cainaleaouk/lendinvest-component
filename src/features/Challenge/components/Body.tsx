@@ -1,13 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { Dispatch } from '@reduxjs/toolkit';
 
 import { Box } from '../../../components/Box';
 import { Card } from '../../../components/Card';
-import { Text } from '../../../components/Text';
 import { getIsLoading, getLoans } from '../../App/store/selectors';
-import { InvestmentRecord, Loan, NormalizedLoan } from '../../App/types';
+import { InvestmentRecord, NormalizedLoan } from '../../App/types';
 import { AppDispatch, RootState } from '../../../store';
 import { ChallengeStore } from '../store/challengeStore';
 
@@ -58,6 +56,7 @@ const Body = ({fetchLoans, investInLoanId, investedRecords, isLoading, loans}: P
     return <Container>{cardsOrLoading}</Container>;
 }
 
+//@TODO: this is not ideal, creating anon functions every time the store is updating. Change to use hooks
 const dispatchProps = (dispatch: AppDispatch): DispatchProps => ({
     investInLoanId: (id: string) => dispatch(ChallengeStore.actions.investInLoanId(id)),
     fetchLoans: () => dispatch(attemptFetchLoans()),
