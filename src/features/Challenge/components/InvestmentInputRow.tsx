@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { AppDispatch, RootState } from '../../../store';
 
 import { Box } from '../../../components/Box';
-import { Button } from '../../../components/Buttons';
+import { Button } from '../../../components/Button';
 import { ChallengeStore } from '../store/challengeStore';
 import { getAmountAvailable } from '../store/selectors';
 import { InputField } from '../../../components/InputField';
@@ -18,13 +18,10 @@ const InputContainer = styled(Box)`
     margin-right: 8px;
 `;
 
-const ButtonContainer = styled(Box)`
-
-`
+const ButtonContainer = styled(Box)``;
 
 const validate = (amountStr: string, maxAmount: number): boolean => {
     const amount = Number(amountStr);
-    console.log(amountStr, maxAmount);
     if (Number.isNaN(amount)) {
         return false;
     }
@@ -47,6 +44,7 @@ const InvestmentInputRow = ({maxAmount, onInvest}: Props) => {
     const [amount, setAmount] = React.useState<string>('0');
 
     const onInvestClick = React.useCallback(() => {
+        //@TODO: add style to show validation error
         if (validate(amount, maxAmount)) {
             onInvest(Number(amount));
         }
@@ -59,7 +57,8 @@ const InvestmentInputRow = ({maxAmount, onInvest}: Props) => {
     return (
         <Container>
             <InputContainer>
-                <InputField type='number' value={amount} onChange={onInputChange} />
+                {/*@TODO: "error" (warning) thrown when using `data-testId` that's used by testing library. Find a way to fix it*/}
+                <InputField data-testId='amount-input' type='number' value={amount} onChange={onInputChange} />
             </InputContainer>
             <ButtonContainer>
                 <Button onClick={onInvestClick}>invest</Button>
