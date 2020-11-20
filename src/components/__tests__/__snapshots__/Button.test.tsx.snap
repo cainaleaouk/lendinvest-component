@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> snapshot should render correctly 1`] = `
+<button
+  className="sc-hKgILt eIFqbd"
+  onClick={[Function]}
+>
+  <p
+    className="sc-bdfBwQ sc-eCssSg hyyzsn bZQIWy"
+  >
+    Click me!
+  </p>
+</button>
+`;
